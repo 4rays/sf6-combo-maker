@@ -33,7 +33,7 @@
   import ModifierOr from "./glyphs/ModifierOr.svelte";
   import ModifierPlus from "./glyphs/ModifierPlus.svelte";
   import Button from "./Button.svelte";
-  import Key from "./Key.svelte";
+  import GameButton from "./GameButton.svelte";
 
   let textModes = [
     { id: 1, text: `URL` },
@@ -277,196 +277,128 @@
   <!-- Left -->
   <div class="grid grid-cols-3 grid-rows-3 gap-4 max-w-40 rounded-xl">
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.upBack)}
-        class="relative hover:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-      >
+      <GameButton key="7" onClickAction={() => add(Glyph.upBack)}>
         <Direction7 />
-        <Key key="7" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.up)}
-        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-      >
+      <GameButton key="8" onClickAction={() => add(Glyph.up)}>
         <Direction8 />
-        <Key key="8" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.upForward)}
-        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-      >
+      <GameButton key="9" onClickAction={() => add(Glyph.upForward)}>
         <Direction9 />
-        <Key key="9" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.back)}
-        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-      >
+      <GameButton key="4" onClickAction={() => add(Glyph.back)}>
         <Direction4 />
-        <Key key="4" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.neutral)}
-        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-      >
+      <GameButton key="5" onClickAction={() => add(Glyph.neutral)}>
         <Direction5 />
-        <Key key="5" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.forward)}
-        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-      >
+      <GameButton key="6" onClickAction={() => add(Glyph.forward)}>
         <Direction6 />
-        <Key key="6" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.downBack)}
-        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-      >
+      <GameButton key="1" onClickAction={() => add(Glyph.downBack)}>
         <Direction1 />
-        <Key key="1" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.down)}
-        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-      >
+      <GameButton key="2" onClickAction={() => add(Glyph.down)}>
         <Direction2 />
-        <Key key="2" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.downForward)}
-        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-      >
+      <GameButton key="3" onClickAction={() => add(Glyph.downForward)}>
         <Direction3 />
-        <Key key="3" />
-      </button>
+      </GameButton>
     </div>
   </div>
   <!-- Middle -->
   <div class="grid grid-cols-4 grid-rows-3 gap-2">
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.lightPunch)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-      >
+      <GameButton key="Q" onClickAction={() => add(Glyph.lightPunch)}>
         <LightPunch />
-        <Key key="Q" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.mediumPunch)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-      >
+      <GameButton key="W" onClickAction={() => add(Glyph.mediumPunch)}>
         <MediumPunch />
-        <Key key="W" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.heavyPunch)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-      >
+      <GameButton key="E" onClickAction={() => add(Glyph.heavyPunch)}>
         <HeavyPunch />
-        <Key key="E" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.punch)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-      >
+      <GameButton key="P" onClickAction={() => add(Glyph.punch)}>
         <Punch />
-        <Key key="P" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.lightKick)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-      >
+      <GameButton key="A" onClickAction={() => add(Glyph.lightKick)}>
         <LightKick />
-        <Key key="A" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.mediumKick)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-      >
+      <GameButton key="S" onClickAction={() => add(Glyph.mediumKick)}>
         <MediumKick />
-        <Key key="S" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.heavyKick)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-      >
+      <GameButton key="D" onClickAction={() => add(Glyph.heavyKick)}>
         <HeavyKick />
-        <Key key="D" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.kick)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-      >
+      <GameButton key="K" onClickAction={() => add(Glyph.kick)}>
         <Kick />
-        <Key key="K" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.and)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
+      <GameButton
+        key="+"
+        onClickAction={() => add(Glyph.and)}
+        includeBackground={true}
       >
         <ModifierPlus />
-        <Key key="+" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.then)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
+      <GameButton
+        key=">"
+        onClickAction={() => add(Glyph.then)}
+        includeBackground={true}
       >
         <ModifierThen />
-        <Key key=">" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.hold)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
+      <GameButton
+        key="H"
+        onClickAction={() => add(Glyph.hold)}
+        includeBackground={true}
       >
         <ModifierHold />
-        <Key key="H" />
-      </button>
+      </GameButton>
     </div>
     <div class="flex items-center justify-center">
-      <button
-        on:click={() => add(Glyph.or)}
-        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
+      <GameButton
+        key="|"
+        onClickAction={() => add(Glyph.or)}
+        includeBackground={true}
       >
         <ModifierOr />
-        <Key key="|" />
-      </button>
+      </GameButton>
     </div>
   </div>
   <!-- Right -->
