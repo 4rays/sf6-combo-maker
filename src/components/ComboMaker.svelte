@@ -33,6 +33,7 @@
   import ModifierOr from "./glyphs/ModifierOr.svelte";
   import ModifierPlus from "./glyphs/ModifierPlus.svelte";
   import Button from "./Button.svelte";
+  import Key from "./Key.svelte";
 
   let textModes = [
     { id: 1, text: `URL` },
@@ -276,82 +277,82 @@
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.upBack)}
-        class="hover:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-        title="7"
+        class="relative hover:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
       >
         <Direction7 />
+        <Key key="7" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.up)}
-        class="hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-        title="8"
+        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
       >
         <Direction8 />
+        <Key key="8" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.upForward)}
-        class="hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-        title="9"
+        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
       >
         <Direction9 />
+        <Key key="9" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.back)}
-        class="hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-        title="4"
+        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
       >
         <Direction4 />
+        <Key key="4" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.neutral)}
-        class="hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-        title="5"
+        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
       >
         <Direction5 />
+        <Key key="5" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.forward)}
-        class="hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-        title="6"
+        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
       >
         <Direction6 />
+        <Key key="6" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.downBack)}
-        class="hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-        title="1"
+        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
       >
         <Direction1 />
+        <Key key="1" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.down)}
-        class="hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-        title="2"
+        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
       >
         <Direction2 />
+        <Key key="2" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.downForward)}
-        class="hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
-        title="3"
+        class="relative hover:opacity-50 transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 active:scale-90"
       >
         <Direction3 />
+        <Key key="3" />
       </button>
     </div>
   </div>
@@ -360,109 +361,109 @@
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.lightPunch)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="Q"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <LightPunch />
+        <Key key="Q" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.mediumPunch)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="W"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <MediumPunch />
+        <Key key="W" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.heavyPunch)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="E"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <HeavyPunch />
+        <Key key="E" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.punch)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="P"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <Punch />
+        <Key key="P" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.lightKick)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="A"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <LightKick />
+        <Key key="A" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.mediumKick)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="S"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <MediumKick />
+        <Key key="S" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.heavyKick)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="D"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <HeavyKick />
+        <Key key="D" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.kick)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="K"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <Kick />
+        <Key key="K" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.and)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="+"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <ModifierPlus />
+        <Key key="+" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.then)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title=">"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <ModifierThen />
+        <Key key=">" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.hold)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="H"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <ModifierHold />
+        <Key key="H" />
       </button>
     </div>
     <div class="flex items-center justify-center">
       <button
         on:click={() => add(Glyph.or)}
-        class="rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
-        title="|"
+        class="relative rounded-full bg-white/10 shadow-sm hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-90 w-10"
       >
         <ModifierOr />
+        <Key key="|" />
       </button>
     </div>
   </div>
