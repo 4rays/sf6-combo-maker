@@ -28,6 +28,17 @@ export enum Glyph {
   or = "|",
   and = "+",
   hold = "Hold",
+  anyDirection = "0",
+  dragonPunch = "DP",
+  quarterCircleForward = "QCF",
+  quarterCircleBack = "QCB",
+  halfCircleBack = "HCB",
+  halfCircleForward = "HCF",
+  threeSixty = "360",
+  driveImpact = "DI",
+  driveRush = "DR",
+  cancel = "~",
+  link = ",",
 }
 
 export const halfWidthSpace = "\u{2009}";
@@ -58,34 +69,6 @@ export const plusUnicode = "\u{FF0B}";
 export const thenUnicode = "\u{2000}\u{232A}";
 export const orUnicode = halfWidthSpace + "|" + halfWidthSpace;
 
-export function svgForButton(glyph: Glyph): string {
-  const svgMap: { [key in Glyph]: string } = {
-    [Glyph.downBack]: "1.svg",
-    [Glyph.down]: "2.svg",
-    [Glyph.downForward]: "3.svg",
-    [Glyph.back]: "4.svg",
-    [Glyph.neutral]: "5.svg",
-    [Glyph.forward]: "6.svg",
-    [Glyph.upBack]: "7.svg",
-    [Glyph.up]: "8.svg",
-    [Glyph.upForward]: "9.svg",
-    [Glyph.lightPunch]: "LP.svg",
-    [Glyph.mediumPunch]: "MP.svg",
-    [Glyph.heavyPunch]: "HP.svg",
-    [Glyph.punch]: "P.svg",
-    [Glyph.lightKick]: "LK.svg",
-    [Glyph.mediumKick]: "MK.svg",
-    [Glyph.heavyKick]: "HK.svg",
-    [Glyph.kick]: "K.svg",
-    [Glyph.then]: "then.svg",
-    [Glyph.or]: "or.svg",
-    [Glyph.and]: "plus.svg",
-    [Glyph.hold]: "hold.svg",
-  };
-
-  return svgMap[glyph];
-}
-
 const numberNotationMap: { [key in Glyph]: string } = {
   [Glyph.downBack]: "1",
   [Glyph.down]: "2",
@@ -108,6 +91,17 @@ const numberNotationMap: { [key in Glyph]: string } = {
   [Glyph.or]: "|",
   [Glyph.and]: ".",
   [Glyph.hold]: "[Hold]",
+  [Glyph.anyDirection]: "0",
+  [Glyph.dragonPunch]: "623",
+  [Glyph.quarterCircleForward]: "236",
+  [Glyph.quarterCircleBack]: "214",
+  [Glyph.halfCircleBack]: "63214",
+  [Glyph.halfCircleForward]: "41236",
+  [Glyph.threeSixty]: "360",
+  [Glyph.driveImpact]: "DI",
+  [Glyph.driveRush]: "DR",
+  [Glyph.cancel]: "~",
+  [Glyph.link]: ",",
 };
 
 const shortCodeMap: { [key in Glyph]: string } = {
@@ -132,6 +126,17 @@ const shortCodeMap: { [key in Glyph]: string } = {
   [Glyph.or]: "|",
   [Glyph.and]: "+",
   [Glyph.hold]: "h",
+  [Glyph.anyDirection]: "0",
+  [Glyph.dragonPunch]: "r",
+  [Glyph.quarterCircleForward]: "t",
+  [Glyph.quarterCircleBack]: "y",
+  [Glyph.halfCircleBack]: "u",
+  [Glyph.halfCircleForward]: "i",
+  [Glyph.threeSixty]: "o",
+  [Glyph.driveImpact]: "b",
+  [Glyph.driveRush]: "n",
+  [Glyph.cancel]: "~",
+  [Glyph.link]: ",",
 };
 
 const letterNotationMap: { [key in Glyph]: string } = {
@@ -156,6 +161,17 @@ const letterNotationMap: { [key in Glyph]: string } = {
   [Glyph.or]: "|",
   [Glyph.and]: ".",
   [Glyph.hold]: "[Hold]",
+  [Glyph.anyDirection]: "0",
+  [Glyph.dragonPunch]: "dp",
+  [Glyph.quarterCircleForward]: "qcf",
+  [Glyph.quarterCircleBack]: "qcb",
+  [Glyph.halfCircleBack]: "hcb",
+  [Glyph.halfCircleForward]: "hcf",
+  [Glyph.threeSixty]: "360",
+  [Glyph.driveImpact]: "DI",
+  [Glyph.driveRush]: "DR",
+  [Glyph.cancel]: "~",
+  [Glyph.link]: ",",
 };
 
 const unicodeNotationMap: { [key in Glyph]: string } = {
@@ -180,6 +196,27 @@ const unicodeNotationMap: { [key in Glyph]: string } = {
   [Glyph.or]: orUnicode,
   [Glyph.and]: plusUnicode,
   [Glyph.hold]: "[Hold]",
+  [Glyph.anyDirection]: "[Direction]",
+  [Glyph.dragonPunch]: arrow6Unicode + arrow2Unicode + arrow3Unicode,
+  [Glyph.quarterCircleForward]: arrow2Unicode + arrow3Unicode + arrow6Unicode,
+  [Glyph.quarterCircleBack]: arrow4Unicode + arrow3Unicode + arrow2Unicode,
+  [Glyph.halfCircleBack]:
+    arrow6Unicode +
+    arrow3Unicode +
+    arrow2Unicode +
+    arrow1Unicode +
+    arrow4Unicode,
+  [Glyph.halfCircleForward]:
+    arrow4Unicode +
+    arrow3Unicode +
+    arrow6Unicode +
+    arrow9Unicode +
+    arrow2Unicode,
+  [Glyph.threeSixty]: "360",
+  [Glyph.driveImpact]: "DI",
+  [Glyph.driveRush]: "DR",
+  [Glyph.cancel]: "~",
+  [Glyph.link]: ",",
 };
 
 export function numberNotationForButton(button: Glyph): string {

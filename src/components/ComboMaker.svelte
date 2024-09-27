@@ -32,6 +32,15 @@
   import ModifierThen from "./glyphs/ModifierThen.svelte";
   import ModifierOr from "./glyphs/ModifierOr.svelte";
   import ModifierPlus from "./glyphs/ModifierPlus.svelte";
+  import QuarterCircleForward from "./glyphs/QuarterCircleForward.svelte";
+  import QuarterCircleBack from "./glyphs/QuarterCircleBack.svelte";
+  import HalfCircleForward from "./glyphs/HalfCircleForward.svelte";
+  import HalfCircleBack from "./glyphs/HalfCircleBack.svelte";
+  import DragonPunch from "./glyphs/DragonPunch.svelte";
+  import ThreeSixty from "./glyphs/ThreeSixty.svelte";
+  import DriveImpact from "./glyphs/DriveImpact.svelte";
+  import DriveRush from "./glyphs/DriveRush.svelte";
+  import AnyDirection from "./glyphs/AnyDirection.svelte";
   import Button from "./Button.svelte";
   import GameButton from "./GameButton.svelte";
 
@@ -58,68 +67,101 @@
     const caseInsensitiveKey = e.key.toLowerCase();
 
     switch (caseInsensitiveKey) {
-      case "1":
+      case shortCodeForButton(Glyph.downBack):
         add(Glyph.downBack);
         break;
-      case "2":
+      case shortCodeForButton(Glyph.down):
         add(Glyph.down);
         break;
-      case "3":
+      case shortCodeForButton(Glyph.downForward):
         add(Glyph.downForward);
         break;
-      case "4":
+      case shortCodeForButton(Glyph.back):
         add(Glyph.back);
         break;
-      case "5":
+      case shortCodeForButton(Glyph.neutral):
         add(Glyph.neutral);
         break;
-      case "6":
+      case shortCodeForButton(Glyph.forward):
         add(Glyph.forward);
         break;
-      case "7":
+      case shortCodeForButton(Glyph.upBack):
         add(Glyph.upBack);
         break;
-      case "8":
+      case shortCodeForButton(Glyph.up):
         add(Glyph.up);
         break;
-      case "9":
+      case shortCodeForButton(Glyph.upForward):
         add(Glyph.upForward);
         break;
-      case "q":
+      case shortCodeForButton(Glyph.lightPunch):
         add(Glyph.lightPunch);
         break;
-      case "w":
+      case shortCodeForButton(Glyph.mediumPunch):
         add(Glyph.mediumPunch);
         break;
-      case "e":
+      case shortCodeForButton(Glyph.heavyPunch):
         add(Glyph.heavyPunch);
         break;
-      case "p":
+      case shortCodeForButton(Glyph.punch):
         add(Glyph.punch);
         break;
-      case "a":
+      case shortCodeForButton(Glyph.lightKick):
         add(Glyph.lightKick);
         break;
-      case "s":
+      case shortCodeForButton(Glyph.mediumKick):
         add(Glyph.mediumKick);
         break;
-      case "d":
+      case shortCodeForButton(Glyph.heavyKick):
         add(Glyph.heavyKick);
         break;
-      case "k":
+      case shortCodeForButton(Glyph.kick):
         add(Glyph.kick);
         break;
-      case "+":
+      case shortCodeForButton(Glyph.and):
         add(Glyph.and);
         break;
-      case ">":
+      case shortCodeForButton(Glyph.then):
         add(Glyph.then);
         break;
-      case "|":
+      case shortCodeForButton(Glyph.or):
         add(Glyph.or);
         break;
-      case "h":
+      case shortCodeForButton(Glyph.hold):
         add(Glyph.hold);
+        break;
+      case shortCodeForButton(Glyph.quarterCircleBack):
+        add(Glyph.quarterCircleBack);
+        break;
+      case shortCodeForButton(Glyph.quarterCircleForward):
+        add(Glyph.quarterCircleForward);
+        break;
+      case shortCodeForButton(Glyph.halfCircleBack):
+        add(Glyph.halfCircleBack);
+        break;
+      case shortCodeForButton(Glyph.halfCircleForward):
+        add(Glyph.halfCircleForward);
+        break;
+      case shortCodeForButton(Glyph.dragonPunch):
+        add(Glyph.dragonPunch);
+        break;
+      case shortCodeForButton(Glyph.threeSixty):
+        add(Glyph.threeSixty);
+        break;
+      case shortCodeForButton(Glyph.driveImpact):
+        add(Glyph.driveImpact);
+        break;
+      case shortCodeForButton(Glyph.driveRush):
+        add(Glyph.driveRush);
+        break;
+      case shortCodeForButton(Glyph.anyDirection):
+        add(Glyph.anyDirection);
+        break;
+      case shortCodeForButton(Glyph.link):
+        add(Glyph.link);
+        break;
+      case shortCodeForButton(Glyph.cancel):
+        add(Glyph.cancel);
         break;
       case "z":
         undo();
@@ -271,8 +313,28 @@
   {/each}
 </div>
 
+<div class="flex gap-2 mt-2 justify-evenly">
+  <div class="flex flex-1">
+    <Button
+      buttonText="Undo"
+      onClickAction={undo}
+      {disableActions}
+      shortcut="Z"
+    />
+  </div>
+  <div class="flex flex-1">
+    <Button
+      buttonText="Reset"
+      onClickAction={clearAll}
+      {disableActions}
+      shortcut="X"
+    />
+  </div>
+</div>
+
 <div
-  class="flex my-8 justify-between sm:justify-center sm:gap-10 flex-wrap p-4 backdrop-blur-xl rounded-lg"
+  id="buttons"
+  class="flex my-8 justify-evenly gap-5 sm:gap-10 flex-wrap p-4 backdrop-blur-xl rounded-lg"
 >
   <!-- Left -->
   <div class="grid grid-cols-3 grid-rows-3 gap-4 max-w-40 rounded-xl">
@@ -402,46 +464,106 @@
     </div>
   </div>
   <!-- Right -->
-  <div class="grid grid-rows-3 gap-2 flex-grow sm:mt-0 mt-10">
-    <div class="flex gap-2">
-      <Button
-        buttonText="Undo"
-        onClickAction={undo}
-        {disableActions}
-        shortcut="Z"
-      />
-      <Button
-        buttonText="Reset Combo"
-        onClickAction={clearAll}
-        {disableActions}
-        shortcut="X"
-      />
+  <div class="grid grid-cols-3 grid-rows-3 gap-4 max-w-40 rounded-xl">
+    <div class="flex items-center justify-center">
+      <GameButton
+        key={shortCodeForButton(Glyph.quarterCircleForward)}
+        onClickAction={() => add(Glyph.quarterCircleForward)}
+      >
+        <QuarterCircleForward />
+      </GameButton>
     </div>
-
-    <div class="flex gap-2">
-      <Button
-        buttonText="Copy as"
-        onClickAction={copyAsText}
-        {disableActions}
-        shortcut="T"
-      />
-      <div>
-        <select
-          id="location"
-          name="location"
-          class="text-yellow-200 block w-full h-full bg-transparent rounded-md border-0 ring-1 ring-opacity-30 ring-inset ring-yellow-200 focus:ring-1 focus:ring-yellow-200"
-          bind:value={selectedTextMode}
-          disabled={disableActions}
-        >
-          {#each textModes as mode}
-            <option value={mode.id} selected={mode.id === selectedTextMode}
-              >{mode.text}</option
-            >
-          {/each}
-        </select>
-      </div>
+    <div class="flex items-center justify-center">
+      <GameButton
+        key={shortCodeForButton(Glyph.quarterCircleBack)}
+        onClickAction={() => add(Glyph.quarterCircleBack)}
+      >
+        <QuarterCircleBack />
+      </GameButton>
     </div>
+    <div class="flex items-center justify-center">
+      <GameButton
+        key={shortCodeForButton(Glyph.dragonPunch)}
+        onClickAction={() => add(Glyph.dragonPunch)}
+      >
+        <DragonPunch />
+      </GameButton>
+    </div>
+    <div class="flex items-center justify-center">
+      <GameButton
+        key={shortCodeForButton(Glyph.halfCircleForward)}
+        onClickAction={() => add(Glyph.halfCircleForward)}
+      >
+        <HalfCircleForward />
+      </GameButton>
+    </div>
+    <div class="flex items-center justify-center">
+      <GameButton
+        key={shortCodeForButton(Glyph.halfCircleBack)}
+        onClickAction={() => add(Glyph.halfCircleBack)}
+      >
+        <HalfCircleBack />
+      </GameButton>
+    </div>
+    <div class="flex items-center justify-center">
+      <GameButton
+        key={shortCodeForButton(Glyph.threeSixty)}
+        onClickAction={() => add(Glyph.threeSixty)}
+      >
+        <ThreeSixty />
+      </GameButton>
+    </div>
+    <div class="flex items-center justify-center">
+      <GameButton
+        key={shortCodeForButton(Glyph.anyDirection)}
+        onClickAction={() => add(Glyph.anyDirection)}
+      >
+        <AnyDirection />
+      </GameButton>
+    </div>
+    <div class="flex items-center justify-center">
+      <GameButton
+        key={shortCodeForButton(Glyph.driveImpact)}
+        onClickAction={() => add(Glyph.driveImpact)}
+      >
+        <DriveImpact />
+      </GameButton>
+    </div>
+    <div class="flex items-center justify-center">
+      <GameButton
+        key={shortCodeForButton(Glyph.driveRush)}
+        onClickAction={() => add(Glyph.driveRush)}
+      >
+        <DriveRush />
+      </GameButton>
+    </div>
+  </div>
+</div>
 
+<div class="grid grid-rows-3 gap-2 flex-grow sm:mt-0 mt-10">
+  <div class="flex gap-2">
+    <Button
+      buttonText="Copy as…"
+      onClickAction={copyAsText}
+      {disableActions}
+      shortcut="T"
+    />
+    <div>
+      <select
+        id="location"
+        name="location"
+        class="text-yellow-200 block w-full h-full bg-transparent rounded-md border-0 ring-1 ring-opacity-30 ring-inset ring-yellow-200 focus:ring-1 focus:ring-yellow-200"
+        bind:value={selectedTextMode}
+        disabled={disableActions}
+      >
+        {#each textModes as mode}
+          <option value={mode.id} selected={mode.id === selectedTextMode}
+            >{mode.text}</option
+          >
+        {/each}
+      </select>
+    </div>
+    <div class="border-l border-yellow-200 border-opacity-20 mx-2"></div>
     <Button
       buttonText="Save as Image"
       onClickAction={copyAsImage}
@@ -458,13 +580,13 @@
   <div class="flex w-full flex-col items-center space-y-4 sm:items-end">
     {#if alertText !== ""}
       <div
-        class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-gray-900 shadow-lg ring-1 ring-black ring-opacity-5"
+        class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-black/50 border border-yellow-200 border-opacity-20 backdrop-blur-xl ring-1 ring-black ring-opacity-5"
       >
         <div class="p-4">
           <div class="flex items-start">
             <div class="flex-shrink-0">
               <svg
-                class="h-6 w-6 text-purple-500"
+                class="h-6 w-6 text-orange-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
@@ -479,8 +601,8 @@
               </svg>
             </div>
             <div class="ml-3 w-0 flex-1 pt-0.5 font-mono">
-              <p class="text-sm font-medium">Combo copied!</p>
-              <p class="mt-1 text-sm text-gray-400">
+              <p class="text-sm font-medium text-yellow-200">Combo copied!</p>
+              <p class="mt-1 text-sm text-stone-400">
                 {alertText}
               </p>
             </div>
