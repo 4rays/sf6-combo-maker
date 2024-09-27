@@ -334,7 +334,7 @@
 
 <div
   id="buttons"
-  class="flex my-8 justify-evenly gap-5 sm:gap-10 flex-wrap p-4 backdrop-blur-xl rounded-lg"
+  class="flex my-8 justify-around gap-5 flex-wrap p-4 backdrop-blur-xl rounded-lg"
 >
   <!-- Left -->
   <div class="grid grid-cols-3 grid-rows-3 gap-4 max-w-40 rounded-xl">
