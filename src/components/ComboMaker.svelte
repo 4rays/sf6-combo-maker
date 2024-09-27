@@ -55,7 +55,9 @@
   }
 
   function onKeyDown(e: KeyboardEvent) {
-    switch (e.key) {
+    const caseInsensitiveKey = e.key.toLowerCase();
+
+    switch (caseInsensitiveKey) {
       case "1":
         add(Glyph.downBack);
         break;
@@ -122,7 +124,7 @@
       case "z":
         undo();
         break;
-      case "Backspace":
+      case "backspace":
         undo();
         break;
       case "x":
