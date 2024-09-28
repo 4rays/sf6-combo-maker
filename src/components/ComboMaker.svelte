@@ -337,100 +337,135 @@
   class="flex my-8 justify-around gap-5 flex-wrap p-4 backdrop-blur-xl rounded-lg"
 >
   <!-- Left -->
-  <div class="grid grid-cols-3 grid-rows-3 gap-4 max-w-40 rounded-xl">
-    <div class="flex items-center justify-center">
-      <GameButton key="7" onClickAction={() => add(Glyph.upBack)}>
-        <Direction7 />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="8" onClickAction={() => add(Glyph.up)}>
-        <Direction8 />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="9" onClickAction={() => add(Glyph.upForward)}>
-        <Direction9 />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="4" onClickAction={() => add(Glyph.back)}>
-        <Direction4 />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="5" onClickAction={() => add(Glyph.neutral)}>
-        <Direction5 />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="6" onClickAction={() => add(Glyph.forward)}>
-        <Direction6 />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="1" onClickAction={() => add(Glyph.downBack)}>
-        <Direction1 />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="2" onClickAction={() => add(Glyph.down)}>
-        <Direction2 />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="3" onClickAction={() => add(Glyph.downForward)}>
-        <Direction3 />
-      </GameButton>
-    </div>
+  <div class="grid grid-cols-3 grid-rows-3 gap-4">
+    <GameButton
+      key="7"
+      onClickAction={() => add(Glyph.upBack)}
+      title="Up-Back | 後ろジャンプ"
+    >
+      <Direction7 />
+    </GameButton>
+    <GameButton
+      key="8"
+      onClickAction={() => add(Glyph.up)}
+      title="Up | ジャンプ"
+    >
+      <Direction8 />
+    </GameButton>
+    <GameButton
+      key="9"
+      onClickAction={() => add(Glyph.upForward)}
+      title="Up-Forward | 前ジャンプ"
+    >
+      <Direction9 />
+    </GameButton>
+    <GameButton
+      key="4"
+      onClickAction={() => add(Glyph.back)}
+      title="Back | 後ろ"
+    >
+      <Direction4 />
+    </GameButton>
+    <GameButton
+      key="5"
+      onClickAction={() => add(Glyph.neutral)}
+      title="Neutral | 立ち"
+    >
+      <Direction5 />
+    </GameButton>
+    <GameButton
+      key="6"
+      onClickAction={() => add(Glyph.forward)}
+      title="Forward | 前"
+    >
+      <Direction6 />
+    </GameButton>
+    <GameButton
+      key="1"
+      onClickAction={() => add(Glyph.downBack)}
+      title="Down-Back | 後ろしゃがみ"
+    >
+      <Direction1 />
+    </GameButton>
+    <GameButton
+      key="2"
+      onClickAction={() => add(Glyph.down)}
+      title="Down | しゃがみ"
+    >
+      <Direction2 />
+    </GameButton>
+    <GameButton
+      key="3"
+      onClickAction={() => add(Glyph.downForward)}
+      title="Down-Forward | 前しゃがみ"
+    >
+      <Direction3 />
+    </GameButton>
   </div>
   <!-- Middle -->
-  <div class="grid grid-cols-4 grid-rows-3 gap-2">
-    <div class="flex items-center justify-center">
-      <GameButton key="Q" onClickAction={() => add(Glyph.lightPunch)}>
-        <LightPunch />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="W" onClickAction={() => add(Glyph.mediumPunch)}>
-        <MediumPunch />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="E" onClickAction={() => add(Glyph.heavyPunch)}>
-        <HeavyPunch />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="P" onClickAction={() => add(Glyph.punch)}>
-        <Punch />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="A" onClickAction={() => add(Glyph.lightKick)}>
-        <LightKick />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="S" onClickAction={() => add(Glyph.mediumKick)}>
-        <MediumKick />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="D" onClickAction={() => add(Glyph.heavyKick)}>
-        <HeavyKick />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton key="K" onClickAction={() => add(Glyph.kick)}>
-        <Kick />
-      </GameButton>
-    </div>
+  <div class="grid grid-cols-3 grid-rows-4 sm:grid-cols-4 sm:grid-rows-3 gap-4">
+    <GameButton
+      key="Q"
+      onClickAction={() => add(Glyph.lightPunch)}
+      title="Light Punch | 弱パンチ"
+    >
+      <LightPunch />
+    </GameButton>
+    <GameButton
+      key="W"
+      onClickAction={() => add(Glyph.mediumPunch)}
+      title="Medium Punch | 中パンチ"
+    >
+      <MediumPunch />
+    </GameButton>
+    <GameButton
+      key="E"
+      onClickAction={() => add(Glyph.heavyPunch)}
+      title="Heavy Punch | 強パンチ"
+    >
+      <HeavyPunch />
+    </GameButton>
+    <GameButton
+      key="P"
+      onClickAction={() => add(Glyph.punch)}
+      title="Any Punch | パンチ"
+    >
+      <Punch />
+    </GameButton>
+    <GameButton
+      key="A"
+      onClickAction={() => add(Glyph.lightKick)}
+      title="Light Kick | 弱キック"
+    >
+      <LightKick />
+    </GameButton>
+    <GameButton
+      key="S"
+      onClickAction={() => add(Glyph.mediumKick)}
+      title="Medium Kick | 中キック"
+    >
+      <MediumKick />
+    </GameButton>
+    <GameButton
+      key="D"
+      onClickAction={() => add(Glyph.heavyKick)}
+      title="Heavy Kick | 強キック"
+    >
+      <HeavyKick />
+    </GameButton>
+    <GameButton
+      key="K"
+      onClickAction={() => add(Glyph.kick)}
+      title="Any Kick | キック"
+    >
+      <Kick />
+    </GameButton>
     <div class="flex items-center justify-center">
       <GameButton
         key="+"
         onClickAction={() => add(Glyph.and)}
         includeBackground={true}
+        title="Simultaneous | 同時入力"
       >
         <ModifierPlus />
       </GameButton>
@@ -440,6 +475,7 @@
         key=">"
         onClickAction={() => add(Glyph.then)}
         includeBackground={true}
+        title="Sequential | 連続入力"
       >
         <ModifierThen />
       </GameButton>
@@ -449,6 +485,7 @@
         key="H"
         onClickAction={() => add(Glyph.hold)}
         includeBackground={true}
+        title="Hold | チャージ"
       >
         <ModifierHold />
       </GameButton>
@@ -458,81 +495,79 @@
         key="|"
         onClickAction={() => add(Glyph.or)}
         includeBackground={true}
+        title="Alternative | 選択"
       >
         <ModifierOr />
       </GameButton>
     </div>
   </div>
   <!-- Right -->
-  <div class="grid grid-cols-3 grid-rows-3 gap-4 max-w-40 rounded-xl">
+  <div class="grid grid-cols-3 grid-rows-3 gap-4">
+    <GameButton
+      key={shortCodeForButton(Glyph.quarterCircleForward).toUpperCase()}
+      onClickAction={() => add(Glyph.quarterCircleForward)}
+      title="Quarter Circle Forward | 波動拳コマンド"
+    >
+      <QuarterCircleForward />
+    </GameButton>
+    <GameButton
+      key={shortCodeForButton(Glyph.quarterCircleBack).toUpperCase()}
+      onClickAction={() => add(Glyph.quarterCircleBack)}
+      title="Quarter Circle Back | 竜巻コマンド"
+    >
+      <QuarterCircleBack />
+    </GameButton>
+    <GameButton
+      key={shortCodeForButton(Glyph.dragonPunch).toUpperCase()}
+      onClickAction={() => add(Glyph.dragonPunch)}
+      title="Dragon Punch | 昇竜拳コマンド"
+    >
+      <DragonPunch />
+    </GameButton>
+    <GameButton
+      key={shortCodeForButton(Glyph.halfCircleForward).toUpperCase()}
+      onClickAction={() => add(Glyph.halfCircleForward)}
+      title="Half Circle Forward | 半回転前"
+    >
+      <HalfCircleForward />
+    </GameButton>
+    <GameButton
+      key={shortCodeForButton(Glyph.halfCircleBack).toUpperCase()}
+      onClickAction={() => add(Glyph.halfCircleBack)}
+      title="Half Circle Back | 半回転後"
+    >
+      <HalfCircleBack />
+    </GameButton>
+    <GameButton
+      key={shortCodeForButton(Glyph.threeSixty).toUpperCase()}
+      onClickAction={() => add(Glyph.threeSixty)}
+      title="Three Sixty | 一回転"
+    >
+      <ThreeSixty />
+    </GameButton>
+    <GameButton
+      key={shortCodeForButton(Glyph.anyDirection).toUpperCase()}
+      onClickAction={() => add(Glyph.anyDirection)}
+      title="Any Direction | 任意方向"
+    >
+      <AnyDirection />
+    </GameButton>
     <div class="flex items-center justify-center">
       <GameButton
-        key={shortCodeForButton(Glyph.quarterCircleForward)}
-        onClickAction={() => add(Glyph.quarterCircleForward)}
-      >
-        <QuarterCircleForward />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton
-        key={shortCodeForButton(Glyph.quarterCircleBack)}
-        onClickAction={() => add(Glyph.quarterCircleBack)}
-      >
-        <QuarterCircleBack />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton
-        key={shortCodeForButton(Glyph.dragonPunch)}
-        onClickAction={() => add(Glyph.dragonPunch)}
-      >
-        <DragonPunch />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton
-        key={shortCodeForButton(Glyph.halfCircleForward)}
-        onClickAction={() => add(Glyph.halfCircleForward)}
-      >
-        <HalfCircleForward />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton
-        key={shortCodeForButton(Glyph.halfCircleBack)}
-        onClickAction={() => add(Glyph.halfCircleBack)}
-      >
-        <HalfCircleBack />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton
-        key={shortCodeForButton(Glyph.threeSixty)}
-        onClickAction={() => add(Glyph.threeSixty)}
-      >
-        <ThreeSixty />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton
-        key={shortCodeForButton(Glyph.anyDirection)}
-        onClickAction={() => add(Glyph.anyDirection)}
-      >
-        <AnyDirection />
-      </GameButton>
-    </div>
-    <div class="flex items-center justify-center">
-      <GameButton
-        key={shortCodeForButton(Glyph.driveImpact)}
+        key={shortCodeForButton(Glyph.driveImpact).toUpperCase()}
         onClickAction={() => add(Glyph.driveImpact)}
+        includeBackground={true}
+        title="Drive Impact | ドライブインパクト"
       >
         <DriveImpact />
       </GameButton>
     </div>
     <div class="flex items-center justify-center">
       <GameButton
-        key={shortCodeForButton(Glyph.driveRush)}
+        key={shortCodeForButton(Glyph.driveRush).toUpperCase()}
         onClickAction={() => add(Glyph.driveRush)}
+        includeBackground={true}
+        title="Drive Rush | ドライブラッシュ"
       >
         <DriveRush />
       </GameButton>
@@ -540,8 +575,8 @@
   </div>
 </div>
 
-<div class="grid grid-rows-3 gap-2 flex-grow sm:mt-0 mt-10">
-  <div class="flex gap-2">
+<div class="flex gap-2 sm:mt-0 mt-10 flex-col sm:flex-row">
+  <div class="flex gap-2 flex-grow">
     <Button
       buttonText="Copy as…"
       onClickAction={copyAsText}
@@ -563,14 +598,17 @@
         {/each}
       </select>
     </div>
-    <div class="border-l border-yellow-200 border-opacity-20 mx-2"></div>
-    <Button
-      buttonText="Save as Image"
-      onClickAction={copyAsImage}
-      {disableActions}
-      shortcut="I"
-    />
   </div>
+
+  <div
+    class="border-l border-yellow-200 border-opacity-20 mx-2 hidden sm:block"
+  ></div>
+  <Button
+    buttonText="Save as Image"
+    onClickAction={copyAsImage}
+    {disableActions}
+    shortcut="I"
+  />
 </div>
 
 <div

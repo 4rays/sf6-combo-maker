@@ -8,6 +8,9 @@ export default {
       fontFamily: {
         display: ["Racing Sans One", ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        touch: { raw: "(pointer: coarse)" },
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],
